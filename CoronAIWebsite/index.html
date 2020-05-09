@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
+
+
+     <httpProtocol>
+        <customHeaders>
+            <add name="Access-Control-Allow-Origin" value="http://127.0.0.1:5500/" />
+            <add name="Access-Control-Allow-Headers" value="Content-Type" />
+            <add name="Access-Control-Allow-Methods" value="GET, POST, PUT, DELETE, OPTIONS" />
+        </customHeaders>
+    </httpProtocol>
     <!-- basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +22,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
+  
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
@@ -131,7 +141,9 @@
                                                     <div class="row">
                                                         <div class="col-md-4"></div>
                                                         <div class="col-md-4" id="butn">
-                                                            <center> <button type="button" class="btn btn-info btn-sm" href="taketest.php">Take Test</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="button" class="btn btn-info btn-sm"><span
+                                                            <center> 
+                                                                <button type="button" class="btn btn-info btn-sm" href="taketest.php" style="color:black;">Take Test</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                 <button type="button" class="btn btn-info btn-sm"><span
                                                       class="close" style="font-size:large;height: 20px;">Close</span></button>
 
                                                             </center>

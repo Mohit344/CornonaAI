@@ -1232,7 +1232,7 @@ ul.top_infomation li i:hover {
 
 .modal {
     display: none;
-    background: linear-gradient(90deg, #283048 0%, #859398 100%);
+    background: white;
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
