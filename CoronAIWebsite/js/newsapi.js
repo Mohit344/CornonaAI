@@ -8,21 +8,21 @@ let newsApi = document.getElementById("newsApi");
 const xhr = new XMLHttpRequest();
 // xhr.open('GET', `https://newsapi.org/v2/top-headlines?q=${source}&apiKey=${apiKey}`, true)
 xhr.open(
-    "GET",
-    `http://newsapi.org/v2/top-headlines?country=in&q=coronavirus&apiKey=6c3ae1f049844dda9b4713777b1574b0`,
-    true
+  "GET",
+  `http://newsapi.org/v2/top-headlines?country=in&q=coronavirus&apiKey=6c3ae1f049844dda9b4713777b1574b0`,
+  true
 );
 
-xhr.onload = function() {
-    if (this.status === 200) {
-        let json = JSON.parse(this.responseText);
+xhr.onload = function () {
+  if (this.status === 200) {
+    let json = JSON.parse(this.responseText);
 
-        let articles = json.articles.slice(-4, -1);
+    let articles = json.articles;
 
-        console.log(articles);
-        let newsHtnl = "";
-        articles.forEach(function(element, index) {
-            let news = `  <div class="owl-item" style="width: 365px; margin-right:12px;">
+    let articlesArr = articles.slice(0, 3);
+    let newsHtnl = "";
+    articlesArr.forEach(function (element, index) {
+      let news = `  <div class="owl-item" style="width: 365px; margin-right:12px;">
                 <div class="item">
                     <div class="protect_box text_align_center">
                         <div class="desktop">
@@ -42,12 +42,12 @@ xhr.onload = function() {
                 </div>
             </div>`;
 
-            newsHtnl += news;
-        });
+      newsHtnl += news;
+    });
 
-        newsApi.innerHTML = newsHtnl;
-    } else {
-        console.log("some error ocuured");
-    }
+    newsApi.innerHTML = newsHtnl;
+  } else {
+    console.log("some error ocuured");
+  }
 };
 xhr.send();
